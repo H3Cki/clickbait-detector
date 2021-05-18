@@ -1,3 +1,16 @@
+# Datasets and training data
+datasets/*
+raw_datasets/*
+raw_json_datasets/*
+wandb/*
+youtube/*
+images/*
+plots/*
+models/*
+packs/*
+tables/*
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
