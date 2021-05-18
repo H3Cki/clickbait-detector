@@ -304,114 +304,114 @@ def plot_counts(cb_counts, ncb_counts, plots, negative=True):
 
 def visualize():
     
-    # for n in range(1,4):
-    #     plots = {
-    #         "name" : f"{n}_gram_pos_tag_no_stopwords",
-    #         "detail" : {
-    #             "mode" : "grouped",
-    #             "sort" : ['total'],
-    #             "data" : {
-    #                 "n" : 50
-    #             },
-    #             "layout": {
-    #                 #"title" : f"<type> Najczęściej używane frazy części mowy o długości {n}",
-    #                 "xaxis_title": None,
-    #                 "yaxis_title": None,
-    #                 "legend_title": None,
-    #                 "barmode" : "relative",
-    #                 "xaxis" : {
-    #                     'tickangle' : -30
-    #                 }
-    #                 }
-    #         },
-    #         'wc' : False
-    #     }
+    for n in range(1,4):
+        plots = {
+            "name" : f"{n}_gram_pos_tag_no_stopwords",
+            "detail" : {
+                "mode" : "grouped",
+                "sort" : ['total'],
+                "data" : {
+                    "n" : 50
+                },
+                "layout": {
+                    #"title" : f"<type> Najczęściej używane frazy części mowy o długości {n}",
+                    "xaxis_title": None,
+                    "yaxis_title": None,
+                    "legend_title": None,
+                    "barmode" : "relative",
+                    "xaxis" : {
+                        'tickangle' : -30
+                    }
+                    }
+            },
+            'wc' : False
+        }
         
-    #     ta = dict(
-    #         n=n,
-    #         as_text=True,
-    #         tokenizer=tp.pos_tags,
-    #         tokenizer_args=dict(
-    #             preserve_stopwords=False,
-    #             tokenizer_args=dict(tag_only=True)
-    #         )
-    #     )
-    #     clickbait_counts    = tp.bulk_count_tokens(clickbait, tokenizer=tp.ngram, tokenizer_args=ta)
-    #     nonclickbait_counts = tp.bulk_count_tokens(nonclickbait, tokenizer=tp.ngram, tokenizer_args=ta)
-    #     plot_counts(clickbait_counts, nonclickbait_counts, plots=plots, negative=False)
+        ta = dict(
+            n=n,
+            as_text=True,
+            tokenizer=tp.pos_tags,
+            tokenizer_args=dict(
+                preserve_stopwords=False,
+                tokenizer_args=dict(tag_only=True)
+            )
+        )
+        clickbait_counts    = tp.bulk_count_tokens(clickbait, tokenizer=tp.ngram, tokenizer_args=ta)
+        nonclickbait_counts = tp.bulk_count_tokens(nonclickbait, tokenizer=tp.ngram, tokenizer_args=ta)
+        plot_counts(clickbait_counts, nonclickbait_counts, plots=plots, negative=False)
 
  
-    # for n in range(1,4):
+    for n in range(1,4):
      
-    #     plots = {
-    #         "name" : f"{n}_gram_no_stopwords",
-    #         "detail" : {
-    #             "mode" : 'grouped',
-    #             "data" : {
-    #                 "n" : 35
-    #             },
-    #             "layout": {
-    #                 #"title" : f"<type> Najczęściej używane frazy o długości {n}, bez wyrazów typu stop word.",
-    #                 "xaxis_title": None,
-    #                 "yaxis_title": None,
-    #                 "legend_title": None,
-    #                 "barmode" : "relative",
-    #                 "xaxis" : {
-    #                     'tickangle' : -30
-    #                 }
-    #             },
-    #         },
-    #         'wc' : True
-    #     }
-    #     clickbait_counts    = tp.bulk_count_tokens(clickbait[:100], tokenizer=tp.ngram, tokenizer_args={'n': n, 'as_text': True, 'tokenizer_args':{'preserve_stopwords': False}})
-    #     nonclickbait_counts = tp.bulk_count_tokens(nonclickbait[:100], tokenizer=tp.ngram, tokenizer_args={'n': n, 'as_text': True, 'tokenizer_args':{'preserve_stopwords': False}})
-    #     plot_counts(clickbait_counts, nonclickbait_counts, plots=plots, negative=False)
+        plots = {
+            "name" : f"{n}_gram_no_stopwords",
+            "detail" : {
+                "mode" : 'grouped',
+                "data" : {
+                    "n" : 35
+                },
+                "layout": {
+                    #"title" : f"<type> Najczęściej używane frazy o długości {n}, bez wyrazów typu stop word.",
+                    "xaxis_title": None,
+                    "yaxis_title": None,
+                    "legend_title": None,
+                    "barmode" : "relative",
+                    "xaxis" : {
+                        'tickangle' : -30
+                    }
+                },
+            },
+            'wc' : True
+        }
+        clickbait_counts    = tp.bulk_count_tokens(clickbait[:100], tokenizer=tp.ngram, tokenizer_args={'n': n, 'as_text': True, 'tokenizer_args':{'preserve_stopwords': False}})
+        nonclickbait_counts = tp.bulk_count_tokens(nonclickbait[:100], tokenizer=tp.ngram, tokenizer_args={'n': n, 'as_text': True, 'tokenizer_args':{'preserve_stopwords': False}})
+        plot_counts(clickbait_counts, nonclickbait_counts, plots=plots, negative=False)
 
 
-    # for n in range(1,4):
-    #     plots = {
-    #         "name" : f"{n}_gram",
-    #         "detail" : {
-    #             "mode" : f"{'grouped' if n > 1 else 'split'}",
-    #             "data" : {
-    #                 "n" : 17 if n > 1 else 10
-    #             },
-    #             "layout": {
-    #                 #"title" : f"<type> Najczęściej używane frazy o długości {n}, bez wyrazów typu stop word.",
-    #                 "xaxis_title": f"{n}-gram",
-    #                 "yaxis_title": "Ilość wystąpień",
-    #                 "legend_title": None,
-    #                 "barmode" : "relative"
-    #             },
-    #         },
-    #         'wc' : True
-    #     }
+    for n in range(1,4):
+        plots = {
+            "name" : f"{n}_gram",
+            "detail" : {
+                "mode" : f"{'grouped' if n > 1 else 'split'}",
+                "data" : {
+                    "n" : 17 if n > 1 else 10
+                },
+                "layout": {
+                    #"title" : f"<type> Najczęściej używane frazy o długości {n}, bez wyrazów typu stop word.",
+                    "xaxis_title": f"{n}-gram",
+                    "yaxis_title": "Occurences",
+                    "legend_title": None,
+                    "barmode" : "relative"
+                },
+            },
+            'wc' : True
+        }
 
-    #     clickbait_counts    = tp.bulk_count_tokens(clickbait, tokenizer=tp.ngram, tokenizer_args={'n': n, 'as_text': True})
-    #     nonclickbait_counts = tp.bulk_count_tokens(nonclickbait, tokenizer=tp.ngram, tokenizer_args={'n': n, 'as_text': True})
-    #     plot_counts(clickbait_counts, nonclickbait_counts, plots=plots)
+        clickbait_counts    = tp.bulk_count_tokens(clickbait, tokenizer=tp.ngram, tokenizer_args={'n': n, 'as_text': True})
+        nonclickbait_counts = tp.bulk_count_tokens(nonclickbait, tokenizer=tp.ngram, tokenizer_args={'n': n, 'as_text': True})
+        plot_counts(clickbait_counts, nonclickbait_counts, plots=plots)
     
     
-    # plots = {
-    #     "name" : "pos_tags_max_desc",
-    #     "total" : {
-    #         "layout": {
-    #             "xaxis_title": "Tag części mowy",
-    #             "yaxis_title": "% tytułów",
-    #             "legend_title": None,
-    #             "barmode" : "group",
-    #             'xaxis' : {
-    #                 'categoryorder' : 'max descending',
-    #                 'range' : [-0.5, 18.5],
-    #                 'tickangle' : -90
-    #                 }
-    #         },
+    plots = {
+        "name" : "pos_tags_max_desc",
+        "total" : {
+            "layout": {
+                "xaxis_title": "POS tags",
+                "yaxis_title": "% of titles",
+                "legend_title": None,
+                "barmode" : "group",
+                'xaxis' : {
+                    'categoryorder' : 'max descending',
+                    'range' : [-0.5, 18.5],
+                    'tickangle' : -90
+                    }
+            },
 
-    #     }
+        }
 
-    # }
-    # ta = dict(tag_only=True)
-    # f = plot_hist(tp.histogramX(clickbait, tp.pos_tags, mode='word', tokenizer_args=ta), tp.histogramX(nonclickbait, tp.pos_tags, mode='word', tokenizer_args=ta), plots)
+    }
+    ta = dict(tag_only=True)
+    f = plot_hist(tp.histogramX(clickbait, tp.pos_tags, mode='word', tokenizer_args=ta), tp.histogramX(nonclickbait, tp.pos_tags, mode='word', tokenizer_args=ta), plots)
    
     
     # #CAPITAL HISTOGRAMS
@@ -421,7 +421,7 @@ def visualize():
         "total" : {
             "layout": {
                 #"title" : "Number of capital letters",
-                "yaxis_title": None,#"% tytułów",
+                "yaxis_title": None,#"% of titles",
                 "xaxis_title": None,#"Udział wielkich liter",
                 "legend_title": None,
                 'shape': 'narrow'
@@ -431,56 +431,56 @@ def visualize():
     plot_hist(tp.histogramX(clickbait, tp.capital, mode='num', tokenizer_args={'numeric': True, 'letter_only': True}), tp.histogramX(nonclickbait, tp.capital, mode='num', tokenizer_args={'numeric': True, 'letter_only': True}), plots)
 
     
-    # plots = {
-    #     "name" : "capital_words",
-    #     "total" : {
-    #         "layout": {
-    #             #"title" : "Number of capital letters",
-    #             "yaxis_title": "% tytułów",
-    #             "xaxis_title": "Udział wyr. pos. wielką lit.",
-    #             "legend_title": None,
-    #             'shape': 'narrow'
-    #         }
-    #     }
-    # }
-    # plot_hist(tp.histogramX(clickbait, tp.capital, mode='num', tokenizer_args={'numeric': True, 'letter_only': False}), tp.histogramX(nonclickbait, tp.capital, mode='num', tokenizer_args={'numeric': True, 'letter_only': False}), plots)
+    plots = {
+        "name" : "capital_words",
+        "total" : {
+            "layout": {
+                #"title" : "Number of capital letters",
+                "yaxis_title": "% of titles",
+                "xaxis_title": "Share of words with capital letter",
+                "legend_title": None,
+                'shape': 'narrow'
+            }
+        }
+    }
+    plot_hist(tp.histogramX(clickbait, tp.capital, mode='num', tokenizer_args={'numeric': True, 'letter_only': False}), tp.histogramX(nonclickbait, tp.capital, mode='num', tokenizer_args={'numeric': True, 'letter_only': False}), plots)
     
 
-    # plots = {
-    #     "name" : "full_capital_words_postags",
-    #     "total" : {
-    #         "layout": {
-    #             #"title" : "Number of fully capital words",
-    #             "yaxis_title": "% tytułów",
-    #             "xaxis_title": "Udział wielkich wyrazów",
-    #             "legend_title": None,
-    #             'shape': 'narrow'
-    #         }
-    #     }
-    # }
-    # ta = dict(full_capital=True, postags=True, numeric=True)
-    # plot_hist(tp.histogramX(clickbait, tp.capital, mode='num', tokenizer_args=ta), tp.histogramX(nonclickbait, tp.capital, mode='num', tokenizer_args=ta), plots)
+    plots = {
+        "name" : "full_capital_words_postags",
+        "total" : {
+            "layout": {
+                #"title" : "Number of fully capital words",
+                "yaxis_title": "% of titles",
+                "xaxis_title": "Share of capital words",
+                "legend_title": None,
+                'shape': 'narrow'
+            }
+        }
+    }
+    ta = dict(full_capital=True, postags=True, numeric=True)
+    plot_hist(tp.histogramX(clickbait, tp.capital, mode='num', tokenizer_args=ta), tp.histogramX(nonclickbait, tp.capital, mode='num', tokenizer_args=ta), plots)
  
     
     
     # #WORD COUNT AND LENGTH HISTOGRAMS
     
-    # plots = {
-    #     "name" : "word_lengths",
-    #     "total" : {
-    #         "layout": {
-    #             #"title" : "Average word length in titles",
-    #             "yaxis_title": "% tytułów",
-    #             "xaxis_title": "Średnia długość tokenu",
-    #             "legend_title": None,
-    #             "barmode" : "group",
-    #             'xaxis' : {'range' : [2,10]},
-    #             'shape' : 'narrow'
-    #         }
-    #     }
-    # }
-    # ta = dict(average=True)
-    # plot_hist(tp.histogramX(clickbait, tp.word_lengths, mode='num', tokenizer_args=ta), tp.histogramX(nonclickbait, tp.word_lengths, mode='num', tokenizer_args=ta), plots)
+    plots = {
+        "name" : "word_lengths",
+        "total" : {
+            "layout": {
+                #"title" : "Average word length in titles",
+                "yaxis_title": "% of titles",
+                "xaxis_title": "Average token length",
+                "legend_title": None,
+                "barmode" : "group",
+                'xaxis' : {'range' : [2,10]},
+                'shape' : 'narrow'
+            }
+        }
+    }
+    ta = dict(average=True)
+    plot_hist(tp.histogramX(clickbait, tp.word_lengths, mode='num', tokenizer_args=ta), tp.histogramX(nonclickbait, tp.word_lengths, mode='num', tokenizer_args=ta), plots)
     
 
     plots = {
@@ -488,7 +488,7 @@ def visualize():
         "total" : {
             "layout": {
                 #"title" : "Number of words in titles",
-                "yaxis_title": None,#"% tytułów",
+                "yaxis_title": None,#"% of titles",
                 "xaxis_title": None,#"Ilość tokenów",
                 "legend_title": None,
                 "barmode" : "group",
@@ -509,7 +509,7 @@ def visualize():
             "layout": {
                 #"title" : "Stop words per title",
                 "xaxis_title": None,#"Udział wyrazów typu stop word",
-                "yaxis_title": None,#"% tytułów",
+                "yaxis_title": None,#"% of titles",
                 "legend_title": None,
                 'xaxis' : {'range' : [-0.05, 0.65]},
                 'shape' : 'narrow'
@@ -520,38 +520,38 @@ def visualize():
     plot_hist(tp.histogramX(clickbait, tp.stopwords, mode='num', tokenizer_args=ta), tp.histogramX(nonclickbait, tp.stopwords, mode='num', tokenizer_args=ta), plots)
     
     
-    # plots = {
-    #     "name" : "contractions",
-    #     "total" : {
-    #         "layout": {
-    #             #"title" : "Contractions per title",
-    #             "xaxis_title": "Udział skrótów",
-    #             "yaxis_title": "% tytułów",
-    #             "legend_title": None,
-    #             'xaxis' : {'range' : [-0.05, 0.25]},
-    #             'shape' : 'narrow'
-    #         }
-    #     }
-    # }
-    # ta = dict(numeric=True)
-    # plot_hist(tp.histogramX(clickbait, tp.contractions, mode='num', tokenizer_args=ta), tp.histogramX(nonclickbait, tp.contractions, mode='num', tokenizer_args=ta), plots)
+    plots = {
+        "name" : "contractions",
+        "total" : {
+            "layout": {
+                #"title" : "Contractions per title",
+                "xaxis_title": "Share of contractions",
+                "yaxis_title": "% of titles",
+                "legend_title": None,
+                'xaxis' : {'range' : [-0.05, 0.25]},
+                'shape' : 'narrow'
+            }
+        }
+    }
+    ta = dict(numeric=True)
+    plot_hist(tp.histogramX(clickbait, tp.contractions, mode='num', tokenizer_args=ta), tp.histogramX(nonclickbait, tp.contractions, mode='num', tokenizer_args=ta), plots)
    
 
-    # plots = {
-    #     "name" : "symbols",
-    #     "total" : {
-    #         "layout": {
-    #             #"title" : "Symbols per title",
-    #             "xaxis_title": "Udział znaków",
-    #             "yaxis_title": "% tytułów",
-    #             "legend_title": None,
-    #             'shape' : 'narrow',
-    #             'xaxis' : {'range' : [-0.05, 0.75]},
-    #         }
-    #     }
-    # }
-    # ta = dict(numeric=True)
-    # plot_hist(tp.histogramX(clickbait, tp.symbols, mode='num', tokenizer_args=ta), tp.histogramX(nonclickbait, tp.symbols, mode='num', tokenizer_args=ta), plots)
+    plots = {
+        "name" : "symbols",
+        "total" : {
+            "layout": {
+                #"title" : "Symbols per title",
+                "xaxis_title": "Share of symbols",
+                "yaxis_title": "% of titles",
+                "legend_title": None,
+                'shape' : 'narrow',
+                'xaxis' : {'range' : [-0.05, 0.75]},
+            }
+        }
+    }
+    ta = dict(numeric=True)
+    plot_hist(tp.histogramX(clickbait, tp.symbols, mode='num', tokenizer_args=ta), tp.histogramX(nonclickbait, tp.symbols, mode='num', tokenizer_args=ta), plots)
     
     
     plots = {
@@ -560,7 +560,7 @@ def visualize():
             "layout": {
                 #"title" : "Symbols per title",
                 "xaxis_title": None,#"Udział zaimków",
-                "yaxis_title": None,#"% tytułów",
+                "yaxis_title": None,#"% of titles",
                 "legend_title": None,
                 'shape' : 'narrow',
                 'xaxis' : {'range' : [-0.05, 0.55]},
@@ -571,21 +571,21 @@ def visualize():
     plot_hist(tp.histogramX(clickbait, tp.pronouns, mode='num', tokenizer_args=ta), tp.histogramX(nonclickbait, tp.pronouns, mode='num', tokenizer_args=ta), plots)
     
     
-    # plots = {
-    #     "name" : "numbers",
-    #     "total" : {
-    #         "layout": {
-    #             #"title" : "Numbers per title",
-    #             "yaxis_title": "% tytułów",
-    #             "xaxis_title": "Udział liczb",
-    #             "legend_title": None,
-    #             'shape' : 'narrow',
-    #             'xaxis' : {'range' : [-0.05, 0.45]},
-    #         }
-    #     }
-    # }
-    # ta = dict(numeric=True)
-    # plot_hist(tp.histogramX(clickbait, tp.numbers, mode='num', tokenizer_args=ta), tp.histogramX(nonclickbait, tp.numbers, mode='num', tokenizer_args=ta), plots)
+    plots = {
+        "name" : "numbers",
+        "total" : {
+            "layout": {
+                #"title" : "Numbers per title",
+                "yaxis_title": "% of titles",
+                "xaxis_title": "Share of numbers",
+                "legend_title": None,
+                'shape' : 'narrow',
+                'xaxis' : {'range' : [-0.05, 0.45]},
+            }
+        }
+    }
+    ta = dict(numeric=True)
+    plot_hist(tp.histogramX(clickbait, tp.numbers, mode='num', tokenizer_args=ta), tp.histogramX(nonclickbait, tp.numbers, mode='num', tokenizer_args=ta), plots)
     
 
     
@@ -597,20 +597,20 @@ def visualize():
     # ### ####### ###
     plots = {
         "name" : "full_capital_pos",
-        # "detail" : {
-        #     "mode" : "split",
-        #     "data" : {
-        #         "n" : 10
-        #     },
-        #     "layout": {
-        #         #"title" : "<type> Rozkład wyrazów składających się wyłącznie z wielkich liter",
-        #         "xaxis_title": "Część mowy wielkiego słowa",
-        #         "yaxis_title": "Ilość wstąpień",
-        #         "legend_title": None,
-        #         "barmode" : "relative"
-        #     }
+        "detail" : {
+            "mode" : "split",
+            "data" : {
+                "n" : 10
+            },
+            "layout": {
+                #"title" : "<type> Rozkład wyrazów składających się wyłącznie z wielkich liter",
+                "xaxis_title": "POS tags of capital words",
+                "yaxis_title": "Occurences",
+                "legend_title": None,
+                "barmode" : "relative"
+            }
             
-        # },
+        },
         
         "wc" : True
     }
@@ -628,8 +628,8 @@ def visualize():
             },
             "layout": {
                 #"title" : "<type> Rozkład wyrazów składających się wyłącznie z wielkich liter",
-                "xaxis_title": "Wielkie słowo",
-                "yaxis_title": "Ilość wstąpień",
+                "xaxis_title": "Capital word",
+                "yaxis_title": "Occurences",
                 "legend_title": None,
                 "barmode" : "relative"
             }
@@ -654,7 +654,7 @@ def visualize():
             "layout": {
                 #"title" : "<type> Distribution of most frequent pos tags",
                 "xaxis_title": None,#"Tag części mowy",
-                "yaxis_title": None,#"Ilość wstąpień",
+                "yaxis_title": None,#"Occurences",
                 "legend_title": None,
                 "barmode" : "group"
             },
@@ -678,7 +678,7 @@ def visualize():
             "layout": {
                 #"title" : "<type> Distribution of stop words",
                 "xaxis_title": "Stop word",
-                "yaxis_title": "Ilość wstąpień",
+                "yaxis_title": "Occurences",
                 "legend_title": None,
                 "barmode" : "relative"
             }
@@ -702,8 +702,8 @@ def visualize():
             },
             "layout": {
                 #"title" : "<type> Distribution of most used word contractions",
-                "xaxis_title": "Skrót",
-                "yaxis_title": "Ilość wstąpień",
+                "xaxis_title": "Contraction",
+                "yaxis_title": "Occurences",
                 "legend_title": None,
                 "barmode" : "relative",
                 "xaxis" : {
@@ -747,8 +747,8 @@ def visualize():
             "sort" : ['total'],
             "layout": {
                 #"title" : "<type> Distribution of most used word pronouns",
-                "xaxis_title": "Zaimek",
-                "yaxis_title": "Ilość wstąpień",
+                "xaxis_title": "Pronoun",
+                "yaxis_title": "Occurences",
                 "legend_title": None,
                 "barmode" : "relative",
                 "xaxis" : {
@@ -774,8 +774,8 @@ def visualize():
             },
             "layout": {
                 #"title" : "<type> Distribution of most used symbols",
-                "xaxis_title": "Liczba",
-                "yaxis_title": "Ilość wstąpień",
+                "xaxis_title": "Number",
+                "yaxis_title": "Occurences",
                 "legend_title": None,
                 "barmode" : "relative",
                 "xaxis" : { "type": 'category' }
@@ -805,8 +805,8 @@ def visualize():
             },
             "layout": {
                 #"title" : "<type> Distribution of most used symbols",
-                "xaxis_title": "Znak",
-                "yaxis_title": "Ilość wstąpień",
+                "xaxis_title": "Symbol",
+                "yaxis_title": "Occurences",
                 "legend_title": None,
                 "barmode" : "relative",
             }
@@ -825,7 +825,3 @@ def visualize():
 if __name__ == '__main__':
     visualize()
 
-
-# dlugosc tekstu
-# stop words
-# ngramy 1,2,3

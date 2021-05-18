@@ -60,7 +60,7 @@ def start_bot():
         print(f'[{datetime.now()}] Successfully logged in and booted...!')
 
 
-    bot.run("NjYzMTk5MzQ1OTE0NTQ0MTM4.XhFChQ.NGp9WTCP937Di9obLsN6D3tzn2M",reconnect=True)
+    bot.run("",reconnect=True)
 
 if __name__ == '__main__':
     start_bot()

@@ -81,7 +81,7 @@ class NNCog(commands.Cog):
             '<:bar_void_09:791340156199895041>',
             '<:bar_void_10:791340156262547496>'
         ]
-        self.hand = '<:hand:791142229518712893>'
+        self.hand = '<:hand:844344613199413248>'
         self.blank = '<:blank:551400844654936095>'
         
     def _load(self):

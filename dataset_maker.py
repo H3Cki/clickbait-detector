@@ -57,7 +57,7 @@ def create_testset(df):
 def merge_datasets():
     for i, f in enumerate(files):
         df = pandas.read_csv(raw_dataset_dir + f, sep=";")
-        if f == 'mix_clickbait_data.csv':
+        if f.startswith("mix"):
             df = create_testset(df)
         ftype = f.split('_')[0]
         if ftype in titles:
