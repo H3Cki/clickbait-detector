@@ -110,8 +110,6 @@ With training data I used the neural network achieved 95% accuracy.
 
 ![](https://i.imgur.com/CbVcOiq.png)
 
-![](https://i.imgur.com/mzK9MqJ.png)
-
 ![](https://i.imgur.com/goWVDjQ.png)
 
 
